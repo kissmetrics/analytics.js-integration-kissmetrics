@@ -205,15 +205,15 @@ describe('KISSmetrics', function() {
       });
 
       it('should send stringify nested traits objects', function() {
-        analytics.identify('id', { trait: { foo: 'bar' }});
+        analytics.identify('id', { trait: { foo: 'bar' } });
         analytics.called(window._kmq.push, ['identify', 'id']);
-        analytics.called(window._kmq.push, ['set', { 'trait.foo': 'bar', id: 'id'}]);
+        analytics.called(window._kmq.push, ['set', { 'trait.foo': 'bar', id: 'id' }]);
       });
 
-      it('should send stringify arrays in nested traits objects', function(){
-        analytics.identify('id', { trait: { foo: [1, 2, 3] }});
+      it('should send stringify arrays in nested traits objects', function() {
+        analytics.identify('id', { trait: { foo: [1, 2, 3] } });
         analytics.called(window._kmq.push, ['identify', 'id']);
-        analytics.called(window._kmq.push, ['set', { 'trait.foo': '1,2,3', id: 'id'}]);
+        analytics.called(window._kmq.push, ['set', { 'trait.foo': '1,2,3', id: 'id' }]);
       });
     });
 
@@ -257,7 +257,7 @@ describe('KISSmetrics', function() {
         }]);
       });
 
-      it('should stringify arrays inside nested objects', function(){
+      it('should stringify arrays inside nested objects', function() {
         analytics.track('event', {
           glenn: {
             coco: ['1', '2', '3']
